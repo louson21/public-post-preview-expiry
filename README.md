@@ -1,6 +1,6 @@
 # Public Post Preview Expiration
 
-**Contributors:** [winglouie](https://profiles.wordpress.org/winglouie/)
+**Contributors:** [winglouie](https://profiles.wordpress.org/winglouie/) <br>
 **Tags:** public post preview, expiration, nonce, security  
 **Requires at least:** 5.0  
 **Tested up to:** 6.4  
