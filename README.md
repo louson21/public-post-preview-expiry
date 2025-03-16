@@ -26,9 +26,9 @@ Extends the Public Post Preview plugin by allowing users to customize the expira
 ## 📌 Installation
 
 1. **Download the plugin.**  
-2. Upload the plugin folder to `/wp-content/plugins/public-post-preview-expiration/` or install it via **Plugins > Add New**.  
-3. Activate the plugin through the **Plugins** menu in WordPress.  
-4. Go to **Settings > PPP Expiration** to configure the expiration time.
+1. Download the repository and extract it.
+2. Upload the extracted **public-post-preview-expiration** folder to `/wp-content/plugins/`.
+3. Activate the plugin in **WordPress Admin > Plugins**.
 
 ---
 
