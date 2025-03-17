@@ -38,11 +38,7 @@ function ppp_expiration_settings_page() {
 
 // Register settings
 function ppp_expiration_settings_init() {
-    register_setting( 'ppp_expiration_options', 'ppp_expiration_time', array(
-        'type'              => 'integer',
-        'sanitize_callback' => 'ppp_expiration_sanitize',
-        'default'           => 30,
-    ) );
+    register_setting( 'ppp_expiration_options', 'ppp_expiration_time', 'ppp_expiration_sanitize' );
 
     add_settings_section(
         'ppp_expiration_section',
