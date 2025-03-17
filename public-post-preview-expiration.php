@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Public Post Preview Expiration
  * Description: Extends the Public Post Preview plugin with custom functionality.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Louie Sonugan
  * Author URI: https://louiesonugan.com/
  * License: GPLv2 or later
@@ -38,7 +38,11 @@ function ppp_expiration_settings_page() {
 
 // Register settings
 function ppp_expiration_settings_init() {
-    register_setting( 'ppp_expiration_options', 'ppp_expiration_time' );
+    register_setting( 'ppp_expiration_options', 'ppp_expiration_time', array(
+        'type'              => 'integer',
+        'sanitize_callback' => 'ppp_expiration_sanitize',
+        'default'           => 30,
+    ) );
 
     add_settings_section(
         'ppp_expiration_section',
@@ -57,10 +61,21 @@ function ppp_expiration_settings_init() {
 }
 add_action( 'admin_init', 'ppp_expiration_settings_init' );
 
+// Secure the input before saving
+function ppp_expiration_sanitize( $input ) {
+    $input = intval( $input ); // Convert to an integer
+    if ( $input < 1 ) {
+        $input = 1; // Minimum 1 minute
+    } elseif ( $input > 43200 ) {
+        $input = 43200;
+    }
+    return $input;
+}
+
 // Field for expiration time
 function ppp_expiration_time_field() {
     $value = get_option( 'ppp_expiration_time', 30 ); // Default to 30 minutes
-    echo '<input type="number" name="ppp_expiration_time" value="' . esc_attr( $value ) . '" min="1" step="1"> minute(s)';
+    echo '<input type="number" name="ppp_expiration_time" value="' . esc_attr( $value ) . '" min="1" max="43200" step="1"> minute(s)';
 }
 
 // Modify nonce expiration dynamically
