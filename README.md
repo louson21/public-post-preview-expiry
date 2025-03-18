@@ -54,7 +54,7 @@ Extends the Public Post Preview plugin by allowing users to customize the expira
 ### **What happens if I enter an invalid value?**
 The plugin automatically **adjusts** any invalid values:
 - If below **1 minute**, it defaults to **1 minute**.
-- - If above **4320 minutes**, it defaults to **3 days**.
+- If above **4320 minutes**, it defaults to **3 days**.
 - If above **43200 minutes**, it defaults to **30 days**.
 
 ### **Does this work without Public Post Preview installed?**
