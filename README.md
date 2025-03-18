@@ -51,11 +51,8 @@ Extends the Public Post Preview plugin by allowing users to customize the expira
 
 ## 🛠️ Frequently Asked Questions
 
-### **What happens if I enter an invalid value?**
-The plugin automatically **adjusts** any invalid values:
-- If below **1 minute**, it defaults to **1 minute**.
-- If above **4320 minutes**, it defaults to **3 days**.
-- If above **43200 minutes**, it defaults to **30 days**.
+### **What is the allowed expiration time range?**
+You can set the expiration time between **1 minute (minimum)** and **43200 minutes (30 days maximum)**.
 
 ### **Does this work without Public Post Preview installed?**
 No, this plugin **extends** the [Public Post Preview](https://wordpress.org/plugins/public-post-preview/) plugin, so it must be installed and activated first.
