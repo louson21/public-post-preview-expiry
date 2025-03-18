@@ -63,7 +63,7 @@ function ppp_expiration_sanitize( $input ) {
     if ( $input < 1 ) {
         $input = 1; // Minimum 1 minute
     } elseif ( $input > 43200 ) {
-        $input = 43200;
+        $input = 43200; //maximum 30 days
     }
     return $input;
 }
